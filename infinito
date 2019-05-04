@@ -3,7 +3,7 @@ Theme Name: Infinito
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Infinito is a clean and minimal two-column grid theme elegantly handcrafted for photographers on Tumblr. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.11
+Version: 1.12
 Credits: jQuery (MIT license), Masonry (MIT license), Infinite Scroll (commercial license purchased), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), PXU Photoset Extended (MIT license), Style Hatch for Photoset Grid, Zack Sultan for media resizing scripts, Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
@@ -270,7 +270,7 @@ input[type="submit"] {background-color: #4971af; border: none; border-radius: 2p
 
 input.searchform_mobile {background: rgba(246,246,246,0.15); border: 0; border-radius: 2px; color: #f6f6f6; height: 23px; margin-right: 5px; margin-top: 10px; padding: 5px; width: 150px;}
 
-input.searchform_mobile:focus {background: rgba(246,246,246,0.1); color: #f6f6f6;}
+input.searchform_mobile:focus {background: rgba(246,246,246,0.1);}
 
 input[type="search"] {/* fixing input type="search" behaviour in safari */ -webkit-appearance: textfield; /* fixing rounded corner in search field in safari iOS */ -webkit-appearance: none;}
 
@@ -315,9 +315,9 @@ a:hover .photo_hover {filter: brightness(70%); -webkit-filter: brightness(70%); 
 
 .tumblr_audio_player {max-width: 100%;}
 
-.audio iframe {max-width: 100%;}
+.soundcloud_audio_player {height: 100%; width: 100%;}
 
-.soundcloud_audio_player, .spotify_audio_player {height: 100%; width: 100%;}
+.spotify_audio_player {height: 80px; width: 100%;}
 
 blockquote {border-left: 3px solid #bbb; margin-left: 10px; padding-left: 10px; word-wrap: break-word;}
 
@@ -413,7 +413,7 @@ blockquote {border-left: 3px solid #bbb; margin-left: 10px; padding-left: 10px; 
 
 .side-menu-wrapper > ul > li > a:hover {color: #c1c1c1;}
 
-.side-menu-wrapper > a.menu-close {color: #6b6b6b; display: block; font-size: 60px; margin: -30px 0 -15px -20px; padding: 8px 0 4px 23px; text-decoration: none;}
+.side-menu-wrapper > a.menu-close {color: #6b6b6b; display: block; font-size: 60px; margin: -40px 0 -15px -20px; padding: 8px 0 4px 23px; text-decoration: none;}
 
 .side-menu-wrapper > a:hover.menu-close {color: #a6a6a6;}
 
@@ -564,14 +564,14 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <body>
 <div id="container">
-<a href="#" class="back_to_top"><i class="fa fa-2x fa-angle-up"></i></a>
+<a href="#" class="back_to_top"><i class="fa fa-2x fa-angle-up"></i><!-- .fa fa-2x fa-angle-up --></a><!-- .back_to_top -->
 
 <!-- SIDEBAR -->
 <div id="sidebar">
-<div class="menu-overlay"></div><a href="#" id="toggle" class="menu-open mobile_only"><span></span></a><div style="clear: both;"></div>
+<div class="menu-overlay"></div><!-- .menu-overlay --><a href="#" id="toggle" class="menu-open mobile_only"><span></span></a><!-- #toggle .menu-open mobile_only --><div style="clear: both;"></div>
 
 <!-- MOBILE NAV -->
-<div class="side-menu-wrapper"><a href="#" class="menu-close">×</a><ul><li><a href="/">Home</a></li>{block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}{block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<li><a href="/archive">Archive</a></li>{/block:IfShowArchiveLink}{block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}<form action="/search" method="get"><input type="search" name="q" value="{SearchQuery}" class="searchform_mobile" placeholder="Search + press enter"></form></ul></div><!-- .side-menu-wrapper -->
+<div class="side-menu-wrapper"><a href="#" class="menu-close">×</a><!-- .menu-close --><ul><li><a href="/">Home</a></li>{block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}{block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<li><a href="/archive">Archive</a></li>{/block:IfShowArchiveLink}{block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}<form action="/search" method="get"><input type="search" name="q" value="{SearchQuery}" class="searchform_mobile" placeholder="Search + press enter"></form></ul></div><!-- .side-menu-wrapper -->
 
 <!-- LOGO -->
 {block:ShowAvatar}
@@ -580,14 +580,14 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <!-- TITLE -->
 {block:ShowTitle}
-<div class="blog_title"><a href="/">{Title}</a></div>
+<div class="blog_title"><a href="/">{Title}</a></div><!-- .blog_title -->
 {/block:ShowTitle}
 
 <!-- TAGLINE -->
-<p class="tag_line caption_padding">{Description}</p>
+<p class="tag_line caption_padding">{Description}</p><!-- .tag_line caption_padding -->
 
 <!-- DESKTOP NAV -->
-<div class="menu desktop_only"><a href="/">Home</a>{block:AskEnabled}<br><a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}<br><a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<br><a href="/archive">Archive</a>{/block:IfShowArchiveLink}<br>{block:HasPages}{block:Pages}<a href="{URL}">{Label}</a><br>{/block:Pages}{/block:HasPages}<a href="#" id="slick-toggle">Search</a></div><!-- .menu desktop_only --><div id="slickbox" class="sidebar_b20 searchbox"><form action="/search" method="get"><input type="text" name="q" value="{SearchQuery}" class="searchform"><input type="submit" value="Go" style="margin-left: 5px;"></form></div><!-- #slickbox .sidebar_b20 searchbox -->
+<div class="menu desktop_only"><a href="/">Home</a>{block:AskEnabled}<br><a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}<br><a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<br><a href="/archive">Archive</a>{/block:IfShowArchiveLink}<br>{block:HasPages}{block:Pages}<a href="{URL}">{Label}</a><br>{/block:Pages}{/block:HasPages}<a href="#" id="slick-toggle">Search</a><!-- #slick-toggle --></div><!-- .menu desktop_only --><div id="slickbox" class="sidebar_b20 searchbox"><form action="/search" method="get"><input type="text" name="q" value="{SearchQuery}" class="searchform"><input type="submit" value="Go" style="margin-left: 5px;"></form></div><!-- #slickbox .sidebar_b20 searchbox -->
 
 <!-- SOCIAL LINKS -->
 <div class="sidebar_b20 sidebar_t18">{block:ifInstagramURL}<a href="{text:Instagram URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/I8apczbkm/instagram.svg" alt="Find me on Instagram" title="Find me on Instagram" class="social_links" width="30" height="30"></a>{/block:ifInstagramURL}{block:ifYouTubeURL}<a href="{text:YouTube URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/xkEpcz5cy/youtube.svg" alt="Find me on YouTube" title="Find me on YouTube" class="social_links" width="30" height="30"></a>{/block:ifYouTubeURL}{block:ifFacebookURL}<a href="{text:Facebook URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/183pcz2er/facebook.svg" alt="Find me on Facebook" title="Find me on Facebook" class="social_links" width="30" height="30"></a>{/block:ifFacebookURL}{block:ifTwitterURL}<a href="{text:Twitter URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/Tc3pcz2f0/twitter.svg" alt="Find me on Twitter" title="Find me on Twitter" class="social_links" width="30" height="30"></a>{/block:ifTwitterURL}{block:ifGooglePlusURL}<a href="{text:GooglePlus URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/288pcz2fb/googleplus.svg" alt="Find me on Google Plus" title="Find me on Google Plus" class="social_links" width="30" height="30"></a>{/block:ifGooglePlusURL}{block:ifPinterestURL}<a href="{text:Pinterest URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/DFfpcz2hj/pinterest.svg" alt="Find me on Pinterest" title="Find me on Pinterest" class="social_links" width="30" height="30"></a>{/block:ifPinterestURL}{block:ifFlickrURL}<a href="{text:Flickr URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/A7Opcz2e6/flickr.svg" alt="Find me on Flickr" title="Find me on Flickr" class="social_links" width="30" height="30"></a>{/block:ifFlickrURL}{block:if500pxURL}<a href="{text:500px URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/doNpcz2ck/500px.svg" alt="Find me on 500px" title="Find me on 500px" class="social_links" width="30" height="30"></a>{/block:if500pxURL}{block:ifLinkedInURL}<a href="{text:LinkedIn URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/gsXpnmbeb/linkedin.svg" alt="Find me on LinkedIn" title="Find me on LinkedIn" class="social_links" width="30" height="30"></a>{/block:ifLinkedInURL}{block:ifRSSURL}<a href="{text:RSS URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/VHUpnmbfl/rss.svg" alt="Subscribe to RSS" title="Subscribe to RSS" class="social_links" width="30" height="30"></a>{/block:ifRSSURL}{block:ifSoundCloudURL}<a href="{text:SoundCloud URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/BbKpnmbgb/soundcloud.svg" alt="Find me on SoundCloud" title="Find me on SoundCloud" class="social_links" width="30" height="30"></a>{/block:ifSoundCloudURL}{block:ifVimeoURL}<a href="{text:Vimeo URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/680pnmbgv/vimeo.svg" alt="Find me on Vimeo" title="Find me on Vimeo" class="social_links" width="30" height="30"></a>{/block:ifVimeoURL}{block:ifKofiURL}<a href="{text:Kofi URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/JaYpgmsof/ko-fi.svg" alt="Find me on Ko-fi" title="Find me on Ko-fi" class="social_links" width="30" height="30"></a>{/block:ifKofiURL}</div><!-- .sidebar_b20 sidebar_t18 -->
@@ -609,15 +609,15 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 {block:Text}
 <div class="post grid-item">
 {block:Title}
-<h1 class="post_title title_indent"><a href="{Permalink}">{Title}</a></h1>
+<h1 class="post_title title_indent"><a href="{Permalink}">{Title}</a></h1><!-- .post_title title_indent -->
 {/block:Title}
 
 <!-- BODY -->
-<div class="caption_padding">{Body}</div>
+<div class="caption_padding">{Body}</div><!-- .caption_padding -->
 
 <!-- SUBMISSION -->
 {block:Submission}
-<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div>
+<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div><!-- .caption_padding -->
 {/block:Submission}
 
 <!-- LIKE AND REBLOG BUTTONS -->
@@ -628,7 +628,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -637,20 +637,20 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- PHOTO -->
 {block:Photo}
 <div class="post grid-item">
-<a class="photopost" data-fancybox="{PostID}" href="{PhotoURL-HighRes}" {block:IndexPage}data-caption="&lt;a href=&quot;{Permalink}&quot;&gt;Go to the Post&lt;/a&gt;{block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{Permalink}#notes&quot;&gt;{NoteCount} Notes&lt;/a&gt;{/block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{ReblogURL}&quot;&gt;Reblog&lt;/a&gt;"{/block:IndexPage}><img src="{PhotoURL-HighRes}" {block:IndexPage}class="photo_hover"{/block:IndexPage} alt="{PhotoAlt}"></a>
+<a data-fancybox="{PostID}" href="{PhotoURL-HighRes}" {block:IndexPage}data-caption="&lt;a href=&quot;{Permalink}&quot;&gt;Go to the Post&lt;/a&gt;{block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{Permalink}#notes&quot;&gt;{NoteCount} Notes&lt;/a&gt;{/block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{ReblogURL}&quot;&gt;Reblog&lt;/a&gt;"{/block:IndexPage}><img src="{PhotoURL-HighRes}" {block:IndexPage}class="photo_hover"{/block:IndexPage} alt="{PhotoAlt}"></a>
 {block:LinkURL}
 {block:PermalinkPage}
-<p class="caption_padding"><a href="{LinkURL}" target="_blank">Find out more here &rarr;</a></p>
+<p class="caption_padding"><a href="{LinkURL}" target="_blank">Find out more here &rarr;</a></p><!-- .caption_padding -->
 {/block:PermalinkPage}
 {/block:LinkURL}
 
 <!-- CAPTION -->
-<div class="photo_caption_meta caption_padding">{block:Caption}{Caption}{/block:Caption}</div>
+<div class="photo_caption_meta caption_padding">{block:Caption}{Caption}{/block:Caption}</div><!-- .photo_caption_meta caption_padding -->
 
 <!-- SUBMISSION -->
 {block:PermalinkPage}
 {block:Submission}
-<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div>
+<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div><!-- .caption_padding -->
 {/block:Submission}
 {/block:PermalinkPage}
 
@@ -672,7 +672,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 {block:Photoset}
 <div class="post grid-item">
 {block:IndexPage}
-<div class="photoset-grid" data-layout="{PhotosetLayout}">{block:Photos}<a class="photopost" data-fancybox="{PostID}" href="{PhotoURL-HighRes}" data-caption="&lt;a href=&quot;{Permalink}&quot;&gt;Go to the Post&lt;/a&gt;{block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{Permalink}#notes&quot;&gt;{NoteCount} Notes&lt;/a&gt;{/block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{ReblogURL}&quot;&gt;Reblog&lt;/a&gt;"}><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo_hover photoset_adjust"></a>
+<div class="photoset-grid" data-layout="{PhotosetLayout}">{block:Photos}<a data-fancybox="{PostID}" href="{PhotoURL-HighRes}" data-caption="&lt;a href=&quot;{Permalink}&quot;&gt;Go to the Post&lt;/a&gt;{block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{Permalink}#notes&quot;&gt;{NoteCount} Notes&lt;/a&gt;{/block:NoteCount}&amp;ensp;&amp;bull;&amp;ensp;&lt;a href=&quot;{ReblogURL}&quot;&gt;Reblog&lt;/a&gt;"}><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo_hover photoset_adjust"></a>
 {/block:Photos}
 </div><!-- .photoset-grid -->
 {/block:IndexPage}
@@ -680,18 +680,18 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 {block:PermalinkPage}
 <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}" style="display: inline-block;">
 {block:Photos}
-<div class="photo-data"><div class="pxu-photo"><a class="photopost" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" alt="{PhotoAlt}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></a></div><!-- .pxu-photo --></div><!-- .photo-data -->
+<div class="photo-data"><div class="pxu-photo"><a data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" alt="{PhotoAlt}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></a></div><!-- .pxu-photo --></div><!-- .photo-data -->
 {/block:Photos}
 </div><!-- .photo-slideshow -->
 {/block:PermalinkPage}
 
 <!-- CAPTION -->
-<div class="photo_caption_meta caption_padding">{block:Caption}{Caption}{/block:Caption}</div>
+<div class="photo_caption_meta caption_padding">{block:Caption}{Caption}{/block:Caption}</div><!-- .photo_caption_meta caption_padding -->
 
 <!-- SUBMISSION -->
 {block:PermalinkPage}
 {block:Submission}
-<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div>
+<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div><!-- .caption_padding -->
 {/block:Submission}
 {/block:PermalinkPage}
 
@@ -714,11 +714,11 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <div class="post grid-item">
 
 <!-- BODY -->
-<div class="caption_padding"><p><span class="quotation_mark">&ldquo;</span>{Quote}</p>{block:Source}&mdash;{Source}{/block:Source}</div><!-- .caption_padding -->
+<div class="caption_padding"><p><span class="quotation_mark">&ldquo;</span><!-- .quotation_mark -->{Quote}</p>{block:Source}&mdash;{Source}{/block:Source}</div><!-- .caption_padding -->
 
 <!-- SUBMISSION -->
 {block:Submission}
-<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div>
+<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div><!-- .caption_padding -->
 {/block:Submission}
 
 <!-- LIKE AND REBLOG BUTTONS -->
@@ -729,7 +729,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -738,14 +738,14 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- LINK -->
 {block:Link}
 <div class="post grid-item">
-<h1 class="post_title title_indent"><a href="{URL}" {Target}>{Name} &#9658;</a></h1>
+<h1 class="post_title title_indent"><a href="{URL}" {Target}>{Name} &#9658;</a></h1><!-- .post_title title_indent -->
 
 <!-- BODY -->
-<div class="caption_padding">{block:Description}{Description}{/block:Description}</div>
+<div class="caption_padding">{block:Description}{Description}{/block:Description}</div><!-- .caption_padding -->
 
 <!-- SUBMISSION -->
 {block:Submission}
-<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div>
+<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div><!-- .caption_padding -->
 {/block:Submission}
 
 <!-- LIKE AND REBLOG BUTTONS -->
@@ -756,7 +756,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -767,7 +767,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <div class="post grid-item">
 
 <!-- BODY -->
-<div>{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}</div><div class="caption_padding">{block:Caption}{Caption}{/block:Caption}</div>
+<div>{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}</div><div class="caption_padding">{block:Caption}{Caption}{/block:Caption}</div><!-- .caption_padding -->
 
 <!-- LIKE AND REBLOG BUTTONS -->
 {block:IfShowLikeAndReblogButtons}
@@ -777,7 +777,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -789,9 +789,9 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <!-- BODY -->
 {block:Title}
-<h1 class="post_title title_indent"><a href="{Permalink}">{Title}</a></h1>
+<h1 class="post_title title_indent"><a href="{Permalink}">{Title}</a></h1><!-- .post_title title_indent -->
 {/block:Title}
-<div class="caption_padding"><ul>{block:Lines}<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>{/block:Lines}</ul></div>
+<div class="caption_padding"><ul>{block:Lines}<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>{/block:Lines}</ul></div><!-- .caption_padding -->
 
 <!-- LIKE AND REBLOG BUTTONS -->
 {block:IfShowLikeAndReblogButtons}
@@ -801,7 +801,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -816,7 +816,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <!-- SUBMISSION -->
 {block:Submission}
-<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div>
+<div class="caption_padding">Submitted by <a href="{SubmitterURL}">{Submitter}</a></div><!-- .caption_padding -->
 {/block:Submission}
 
 <!-- LIKE AND REBLOG BUTTONS -->
@@ -827,7 +827,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -838,7 +838,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <div class="post grid-item">
 
 <!-- BODY -->
-<div class="caption_padding"><p><strong>{Asker} Asked: </strong>{Question}</p><p>{Answer}</p></div>
+<div class="caption_padding"><p><strong>{Asker} Asked: </strong>{Question}</p><p>{Answer}</p></div><!-- .caption_padding -->
 
 <!-- LIKE AND REBLOG BUTTONS -->
 {block:IfShowLikeAndReblogButtons}
@@ -848,7 +848,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- POST META -->
 <div class="post_meta tag_block">
 {block:Date}
-<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+<span>Posted <a href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom} Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} <span class="share_buttons">Share on</span><!-- .share_buttons --> <span class="share_buttons"><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" target="_blank">Pinterest</a></span><!-- .share_buttons --> <span class="share_buttons"><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}">Email</a></span><!-- .share_buttons --> {block:IfShowTags}{block:HasTags}<span class="tag_buttons">Tags</span><!-- .tag_buttons --> {block:Tags}<span class="tag_buttons"><a href="{TagURL}">{Tag}</a></span><!-- .tag_buttons --> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 {/block:Date}
 </div><!-- .post_meta tag_block -->
 </div><!-- .post grid-item -->
@@ -856,13 +856,13 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <!-- POST PAGINATION -->
 {block:PermalinkPagination}
-<div class="nav_posts">{block:NextPost}<a href="{NextPost}" class="new">Next Post</a>{/block:NextPost}{block:PreviousPost}<a href="{PreviousPost}" class="old">Previous Post</a>{/block:PreviousPost}</div><!-- .nav_posts -->
+<div class="nav_posts">{block:NextPost}<a href="{NextPost}" class="new">Next Post</a><!-- .new -->{/block:NextPost}{block:PreviousPost}<a href="{PreviousPost}" class="old">Previous Post</a><!-- .old -->{/block:PreviousPost}</div><!-- .nav_posts -->
 {/block:PermalinkPagination}
 
 <!-- NOTES -->
 {block:PermalinkPage}
 {block:NoteCount}
-<div class="caption_padding"><a name="notes"></a>{PostNotes-64}</div>
+<div class="caption_padding"><a name="notes"></a>{PostNotes-64}</div><!-- .caption_padding -->
 {/block:NoteCount}
 {/block:PermalinkPage}
 
@@ -871,17 +871,17 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <!-- PAGE PAGINATION -->
 {block:Pagination}
-<div class="nav_pages">{block:PreviousPage}<a href="{PreviousPage}" class="pagination_previous">Previous Page</a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="pagination_next">Next Page</a>{/block:NextPage}</div><!-- .nav_pages -->
+<div class="nav_pages">{block:PreviousPage}<a href="{PreviousPage}" class="pagination_previous">Previous Page</a><!-- .pagination_previous -->{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="pagination_next">Next Page</a><!-- .pagination_next -->{/block:NextPage}</div><!-- .nav_pages -->
 {/block:Pagination}
 </div><!-- #content .grid -->
 
 <!-- LOADING -->
 {block:IndexPage}
-<div class="page-load-status"><div class="loader-ellips infinite-scroll-request"><span class="loader-ellips__dot"></span><span class="loader-ellips__dot"></span><span class="loader-ellips__dot"></span><span class="loader-ellips__dot"></span></div><!-- .loader-ellips infinite-scroll-request --><p class="infinite-scroll-last">End of Content</p><p class="infinite-scroll-error">No More Pages to Load</p></div><!-- .page-load-status -->
+<div class="page-load-status"><div class="loader-ellips infinite-scroll-request"><span class="loader-ellips__dot"></span><!-- .loader-ellips__dot --><span class="loader-ellips__dot"></span><!-- .loader-ellips__dot --><span class="loader-ellips__dot"></span><!-- .loader-ellips__dot --><span class="loader-ellips__dot"></span><!-- .loader-ellips__dot --></div><!-- .loader-ellips infinite-scroll-request --><p class="infinite-scroll-last">End of Content</p><!-- .infinite-scroll-last --><p class="infinite-scroll-error">No More Pages to Load</p><!-- .infinite-scroll-error --></div><!-- .page-load-status -->
 {/block:IndexPage}
 
 <!-- FOOTER -->
-<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40997/">Infinito theme (1.11)</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span></div><!-- .footer_inside --></div><!-- .footer -->
+<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40997/">Infinito theme (1.12)</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span></div><!-- .footer_inside --></div><!-- .footer -->
 </div><!-- #container -->
 
 <!-- SLIDING MENU -->
