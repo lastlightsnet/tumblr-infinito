@@ -3,7 +3,7 @@ Theme Name: Infinito
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Infinito is a clean and minimal two-column grid theme elegantly handcrafted for photographers on Tumblr. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.12
+Version: 1.13
 Credits: jQuery (MIT license), Masonry (MIT license), Infinite Scroll (commercial license purchased), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), PXU Photoset Extended (MIT license), Style Hatch for Photoset Grid, Zack Sultan for media resizing scripts, Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
@@ -881,7 +881,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 {/block:IndexPage}
 
 <!-- FOOTER -->
-<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40997/">Infinito theme (1.12)</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span></div><!-- .footer_inside --></div><!-- .footer -->
+<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40997/">Infinito theme (1.13)</a> on <a href="https://www.tumblr.com">Tumblr</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; <a href="http://lastlights.net/theme-support/">Theme Support</a></span></div><!-- .footer_inside --></div><!-- .footer -->
 </div><!-- #container -->
 
 <!-- SLIDING MENU -->
